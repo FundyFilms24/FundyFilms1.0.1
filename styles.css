@@ -95,6 +95,7 @@ body {
     align-items: center;
     padding: 0 1rem;
     width: 100%;
+
 }
 
 .button {
@@ -136,18 +137,28 @@ body {
     background-color: #0b1245;
     display: none; /* ✅ Keeps it hidden until hover */
     list-style: none;
-    padding: 20px 10px;
-    border-radius: 5px;
+    padding: 30px 10px;
+    border-radius: 0 0 10px 10px;
 }
 
 .dropdown:hover .dropdown-menu {
     display: block; /* ✅ Shows dropdown when hovering over Movies */
 }
 
-@media (max-width: 768px) {
-    .dropdown-menu {
-        position: static; /* ✅ Prevents issues inside the mobile nav */
-        display: block; /* ✅ Ensures menu works properly on mobile */
+@media (max-width: 960px) {
+    .dropdown:hover .dropdown-menu {
+    display: block; /* ✅ Shows dropdown when hovering over Movies */
+    width: 100%;
+}
+
+    .dropdown-menu a {
+        font-size: 25px;
+        padding: 5px 10px;
+    }
+
+    .dropdown > a::after {
+        content: "▼";
+        display: inline-block;
     }
 }
 
@@ -175,11 +186,11 @@ body {
         transition: all 0.5s ease;
         height: 50vh;
         z-index: -1;
-        background: #c1c1c1;
+        background: #182d54;
     }
 
     .navbar__menu.active {
-        background: #c1c1c1;
+        background: #0b1245;
         top: 100%;
         opacity: 1;
         transition: all 0.5s ease;
@@ -216,6 +227,7 @@ body {
         top: 20%;
         right: 5%;
         transform: translate(5%, 20%);
+        background: #182d54;
     }
 
     .navbar__btn {
@@ -245,7 +257,7 @@ body {
     }
 
     #mobile-menu.is-active .bar:nth-child(3) {
-        transform: translateY(-8px) rotate(-45deg);
+        transform: translateX(-8px) rotate(-45deg);
     }
 }
 
@@ -307,7 +319,7 @@ body {
 .carousel__text {
     position: absolute;
     top: 80%;
-    left: 35%;
+    left: 50%;
     transform: translate(-50%, -50%); /* ✅ Centers text exactly */
     text-align: center;
     color: #fff;
