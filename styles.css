@@ -7,12 +7,12 @@
 
 body {
     overflow-x: hidden; /* Prevents page-wide horizontal scrolling */
-    background-color: #141414;
+    background-color: #0b1425;
 }
 
 
 .navbar {
-    background: #5d6262;
+    background: #182d54;
     height: 80px;
     display: flex;
     justify-content: center;
@@ -34,25 +34,30 @@ body {
     padding: 0 50px;
 }
 
+@keyframes gradientAnimation {
+    0% { background: linear-gradient(90deg, #3766bd, #4a89ff); }
+    50% { background: linear-gradient(90deg, #182d54, #24427a); }
+    100% { background: linear-gradient(90deg, #0b1425, #182d54); }
+}
+
 #navbar__logo {
-    background-color: #ff8177;
-    background-image: linear-gradient(to top, #fdbf16 0%, #4400ff 100% );
-    background-size: 100%;
-    -webkit-background-clip: text;
-    -moz-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    -moz-text-fill-color: transparent;
+    font-size: 2rem;
+    font-weight: bold;
     display: flex;
     align-items: center;
-    cursor: pointer;
     text-decoration: none;
-    font-size: 2rem;
-    background: linear-gradient(to right, rgb(239, 206, 110), rgb(248, 182, 77), rgb(120, 244, 231), rgb(0, 255, 221), rgb(3, 238, 250),  rgb(239, 206, 110)); 
+    cursor: pointer;
+
+    background: linear-gradient(90deg, #3766bd, #4a89ff);
+    background-size: 200% 200%;
+    animation: gradientAnimation 5s infinite alternate;
+
+    -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
-    background-size: 200% auto;
-    animation: gradientAnimation 6s linear infinite;
 }
+
+
 
 .material-symbols-outlined.md-15 {
     font-size: 37.5px;
@@ -81,6 +86,7 @@ body {
     text-decoration: none;
     padding: 0 1rem;
     height: 100%;
+    gap: 20px;
 }
 
 .navbar__btn {
@@ -102,20 +108,49 @@ body {
     border: none;
     outline: none;
     border-radius: 15px;
-    background: #00ffff;
-    color: #575f67;
+    background: #3766bd;
+    color: #fff;
+    transition: background-color 0.3s ease-in-out;
 }
 
 .button:hover {
-    background: #f48507;
+    background: #4a89ff;
     transition: all 0.3 ease;
     color: #fff;
 }
 
 .navbar__links:hover {
-    color: #00ffff;
+    color: #4a89ff;
     transition: all 0.3s ease;
 }
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #0b1245;
+    display: none; /* ✅ Keeps it hidden until hover */
+    list-style: none;
+    padding: 20px 10px;
+    border-radius: 5px;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block; /* ✅ Shows dropdown when hovering over Movies */
+}
+
+@media (max-width: 768px) {
+    .dropdown-menu {
+        position: static; /* ✅ Prevents issues inside the mobile nav */
+        display: block; /* ✅ Ensures menu works properly on mobile */
+    }
+}
+
 
 @media screen and (max-width: 960px) {
     .navbar__container {
@@ -217,7 +252,7 @@ body {
 
 /*Content Section*/
 .main {
-    background-color: #141414;
+    background-color: #0b1425;
 }
 
 /* Banner Section */
@@ -235,7 +270,15 @@ body {
     overflow: hidden;
     position: relative;
     width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    max-width: 90%;
+    margin: 20px auto;
+    border-radius: 20px;
 }
+
 
 .carousel__slide {
     position: relative; /* Keeps slides properly aligned */
@@ -249,29 +292,32 @@ body {
     display: block; /* ✅ Ensures only one slide is visible */
 }
 
-
-
 .carousel__slide img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    max-height: 80vh; /* ✅ Limits height so it’s not too big */
+    object-fit: contain; 
+    aspect-ratio: 16/9;
     border-radius: 20px;
+    display: block;
 }
 
 /* Text on Banner */
 
 .carousel__text {
     position: absolute;
-    top: 85%; 
-    left: 30%;
+    top: 80%;
+    left: 35%;
     transform: translate(-50%, -50%); /* ✅ Centers text exactly */
     text-align: center;
     color: #fff;
     background: rgba(0, 0, 0, 0.5); /* ✅ Adds slight transparency */
-    padding: 20px;
     border-radius: 8px;
     width: auto; /* ✅ Allows text box to grow */
-    max-width: 80%; /* ✅ Prevents it from getting too wide */
+    max-width: 80%; /* ✅ Restricts text width */
+    word-wrap: break-word; /* ✅ Ensures long text wraps correctly */
+    overflow-wrap: break-word; /* ✅ Prevents overflow */
+    text-align: center; /* ✅ Centers text to avoid edge clipping */
 }
 
 
@@ -312,11 +358,16 @@ body {
 
 
 .carousel__dots {
+    position: absolute; /* ✅ Places dots over slides */
+    bottom: 20px; /* ✅ Adjust distance from bottom */
+    left: 50%;
+    transform: translateX(-50%); /* ✅ Centers dots */
+    z-index: 5; /* ✅ Ensures dots are above everything */
     display: flex;
-    gap: 8px;
-    justify-content: center;
-    margin-top: 10px;
+    gap: 10px; /* ✅ Adds spacing between dots */
 }
+
+
 
 .dot {
     position: relative;
@@ -379,7 +430,7 @@ body {
     justify-self: center;
     margin: 0 auto;
     height: 90vh;
-    background-color: #141414;
+    background-color: #0b1425;
     z-index: 1;
     width: 100%;
     max-width: 1300px;
@@ -523,7 +574,7 @@ body {
 /* Services Section CSS */
 
 .services {
-    background: #141414;
+    background: #0b1425;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -561,14 +612,6 @@ body {
     }
 }
 
-@keyframes gradientanimation {
-    0%{
-        background-position: 200% 50%;
-    }
-    100%{
-        background-position: 0% 50%;
-    }
-}
 
 .services__container {
     display: flex;
@@ -652,7 +695,7 @@ body {
 
 /* Footer CSS */
 .footer__container {
-    background-color: #141414;
+    background-color: #0b1425;
     padding: 5rem 0;
     display: flex;
     flex-direction: column;

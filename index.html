@@ -21,18 +21,23 @@
                 <span class="bar"></span>
             </div>
             <ul class="navbar__menu">
-                <li class="navbar__item">
-                    <a href="index.html" class="navbar__links">Home</a>
-                </li>
-                <li class="navbar__item">
-                    <a href="movies.html" class="navbar__links">Movies</a>
-                </li>
-                <li class="navbar__item">
-                    <a href="series.html" class="navbar__links">Series</a>
-                </li>
-                <li class="navbar__btn">
-                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfgT-7O0o1InUIIEjNhDmoq42MGmqypEavdyGLM0nzJ-by68w/viewform" class="button" target="_blank">Sign Up</a></li>
-            </ul>
+    <li class="navbar__item"><a href="index.html" class="navbar__links">Home</a></li>
+    <li class="navbar__item"><a href="index.html" class="navbar__links">About</a></li>
+
+    <li class="dropdown navbar__item">
+        <a href="#" class="navbar__links">Films</a>
+        <ul class="dropdown-menu"> <!-- ✅ Correct dropdown structure -->
+            <li><a href="movies.html" class="navbar__links">Movies</a></li>
+            <li><a href="#" class="navbar__links">Shows</a></li>
+            <li><a href="#" class="navbar__links">Action</a></li>
+            <li><a href="#" class="navbar__links">Comedy</a></li>
+            <li><a href="#" class="navbar__links">Drama</a></li>
+        </ul>
+    </li>
+
+    <li class="navbar__btn"><a href="/" class="button" target="_blank">Sign Up</a></li>
+</ul>
+
         </div>
     </nav>
 
