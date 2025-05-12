@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="icon" type="image/png" href="/images/favicon.png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FundyFilms</title>
@@ -20,13 +21,12 @@
                 <span class="bar"></span>
                 <span class="bar"></span>
             </div>
-            <ul class="navbar__menu">
+<ul class="navbar__menu">
     <li class="navbar__item"><a href="index.html" class="navbar__links">Home</a></li>
     <li class="navbar__item"><a href="index.html" class="navbar__links">About</a></li>
-
     <li class="dropdown navbar__item">
-        <a href="films.html" class="navbar__links" id="films-link">Films</a>
-        <ul class="dropdown-menu"> <!-- ✅ Correct dropdown structure -->
+        <a href="#" class="navbar__links">Films</a>
+        <ul class="dropdown-menu">
             <li><a href="movies.html" class="navbar__links">Movies</a></li>
             <li><a href="#" class="navbar__links">Shows</a></li>
             <li><a href="#" class="navbar__links">Action</a></li>
@@ -34,8 +34,9 @@
             <li><a href="#" class="navbar__links">Drama</a></li>
         </ul>
     </li>
-
-    <li class="navbar__btn"><a href="/" class="button" target="_blank">Sign Up</a></li>
+    <li class="navbar__btn">
+        <a href="/" class="button" target="_blank">Sign Up</a>
+    </li>
 </ul>
 
         </div>
@@ -43,38 +44,65 @@
 
     <!--Content Section-->
     <div class="main">
-        
-        
+        <div class="banner">
+            <div class="carousel">
+                <button class="prev-btn">&#10094;</button> <!-- Left arrow -->
+                <div class="carousel__slide active">
+                    <img src="images/banner1.jpg" alt="Banner 1">
+                    <div class="carousel__text">
+                        <h1>Discover the Best Films</h1>
+                        <p>Streaming now</p>
+                    </div>
+                </div>
+                <div class="carousel__slide">
+                    <img src="images/banner2.jpg" alt="Banner 2">
+                    <div class="carousel__text">
+                        <h1>Fundy Films Original Content</h1>
+                        <p>Only available here</p>
+                    </div>
+                </div>
+                <div class="carousel__slide">
+                    <img src="images/banner3.jpg" alt="Banner 3">
+                    <div class="carousel__text">
+                        <h1>Join the Adventure</h1>
+                        <p>Your entertainment starts now</p>
+                    </div>
+                </div>
+                <div class="carousel__slide">
+                    <img src="images/banner4.jpg" alt="Banner 4">
+                    <div class="carousel__text">
+                        <h1>New Exclusive Release</h1>
+                        <p>Streaming this week</p>
+                    </div>
+                </div>
+                
+                <div class="carousel__slide">
+                    <img src="images/banner5.jpg" alt="Banner 5">
+                    <div class="carousel__text">
+                        <h1>Coming Soon:</h1>
+                        <p>Dragon Slayer</p>
+                    </div>
+                </div>
+                <button class="next-btn">&#10095;</button> <!-- Right arrow -->
+            </div>
+<div class="carousel__dots">
+    <span class="dot active"><span class="progress-fill"></span></span>
+    <span class="dot"><span class="progress-fill"></span></span>
+    <span class="dot"><span class="progress-fill"></span></span>
+    <span class="dot"><span class="progress-fill"></span></span>
+    <span class="dot"><span class="progress-fill"></span></span>
+</div>
+        </div>
         <div class="main__container">
             <div class="main__content">
-                <h1>This is</h1>
-                <h2>Fundy Films</h2>
-                <p>Your Entertainment</p>
+                <h2>Select From Various Films</h2>
                 <button class="main__btn"><a href="https://docs.google.com/forms/d/e/1FAIpQLSfgT-7O0o1InUIIEjNhDmoq42MGmqypEavdyGLM0nzJ-by68w/viewform" target="_blank" class="btn2">Get Started</a></button>
-            </div>
-            <div class="main__img--container">
-                <img src="pic1.svg" alt="pic" id="main__img">
             </div>
             </div>
         </div>
-    </div>
+
    
-    <!--Services Section-->
-    <div class="services">
-        <h1><a href="/">See what its about</a></h1>
-        <div class="services__container">
-                <div class="services__card">
-                    <h2>Service 1</h2>
-                    <p>Description of Service 1</p>
-                    <button>Learn More</button>
-                </div>
-                <div class="services__card">
-                    <h2>Service 2</h2>
-                    <p>Description of Service 2</p>
-                    <button>Learn More</button>
-                </div>
-        </div>        
-    </div>
+
 
     <!-- Footer Section -->
 
@@ -122,7 +150,7 @@
                 <div class="footer__logo">
                     <a href="/" id="footer__logo"><span class="material-symbols-outlined">videocam</span>Fundy Films</a>
                 </div>
-                <p class="website__rights">&#169;Fundy Films 2025. All rights reserved</p>
+                <p class="website__rights">&#169;Fundy FIlms 2025. All rights reserved</p>
                 <div class="social__icons">
                     <a href="/" class="social__icon--link" target="_blank">
                         <span class="material-symbols-outlined">chat</span>
@@ -136,5 +164,6 @@
     </div>
 
     <script src="app.js"></script>
+    <script src="carousel.js"></script>
 </body>
 </html>
